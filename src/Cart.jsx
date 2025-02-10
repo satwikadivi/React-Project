@@ -48,7 +48,8 @@ function Cart() {
   let couponDiscountAmount = (totalPrice * couponDiscountPer) / 100;
   let finalPrice1 = totalPrice - discountAmount - couponDiscountAmount;
 
-  const purchaseDate = new Date().toLocaleDateString();
+  const purchaseDate = new Date().toLocaleString();
+  
   const handlePurchaseDetails = () => {
     const purchaseDetailsObject = {
       date: purchaseDate,
@@ -60,7 +61,7 @@ function Cart() {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 ">
       {cartObjects.length > 0 ? (
         <div>
           <h2 className="text-primary text-center mb-4">Your Cart</h2>
@@ -68,7 +69,7 @@ function Cart() {
             {cartObjects.map((item, index) => (
               <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
                 <span>
-                  <strong>{item.name}</strong> - ${item.price}
+                  <img src={item.image} width={50} height={40}></img>   <strong>{item.name}</strong> - ${item.price}
                 </span>
                 <div>
                   <button className="btn btn-sm btn-outline-success me-2" onClick={() => dispatch(increment(item))}>

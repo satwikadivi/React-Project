@@ -20,17 +20,17 @@ function Login() {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-8">
       <div className="row justify-content-center">
-        <div className="col-md-6">
-          <div className="card shadow-lg p-4">
+      <div className="card shadow-lg h-100 border-primary rounded">
+      <div className="card-header bg-white text-white">
             <h2 className="text-center text-primary mb-4">Login Page</h2>
             <div className="mb-3">
-              <label className="form-label">Username</label>
+              <label className="form-label text-danger fw-bold" >Username</label>
               <input type="text" ref={username} className="form-control" placeholder="Enter username" />
             </div>
             <div className="mb-3">
-              <label className="form-label">Password</label>
+              <label className="form-label text-success fw-bold">Password</label>
               <input type="password" ref={password} className="form-control" placeholder="Enter password" />
             </div>
             <button onClick={loginCheck} className="btn btn-primary w-100">

@@ -1,15 +1,9 @@
-// function ContactUs()
-// {
-//     return(
-//         <>
-//         <h1>This is Contact Us Page In ContactUs.jsx file</h1>
-//         </>
-//     )
-// }
-// export default ContactUs;
-
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook } from "@fortawesome/free-brands-svg-icons/faFacebook";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons/faInstagram";
+import { faYoutube } from "@fortawesome/free-brands-svg-icons/faYoutube";
 
 function ContactUs() {
   const [formData, setFormData] = useState({
@@ -94,9 +88,12 @@ function ContactUs() {
             <strong>Email:</strong> support@onlineGrocery.com
           </p>
           <p>
-            <strong>Phone:</strong> 9533271546
+            <strong>Phone:</strong> 9533271545
           </p>
           <p className="text-muted">We respond within 24 hours!</p>
+          <p><FontAwesomeIcon icon={faFacebook}/>&nbsp;
+           <FontAwesomeIcon icon={faInstagram}/>&nbsp;
+            <FontAwesomeIcon icon={faYoutube} /> - @OnlineGrocery</p>
         </div>
       </div>
     </div>
