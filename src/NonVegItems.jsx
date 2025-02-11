@@ -14,8 +14,8 @@ function NonVegItems() {
     const [offerActive, setOfferActive] = useState(false);
     
       useEffect(() => {
-        const startHour = 8; // 8 PM
-        const endHour = 9; // 9 PM
+        const startHour = 20; // 8 PM
+        const endHour = 22; // 10 PM
         const now = new Date();
         const currentHour = now.getHours();
     
@@ -67,7 +67,7 @@ function NonVegItems() {
         </div>
       </div>  
       
-      <h4 className="text-danger text-center">{offerActive ? `Limited Time Offer: ${discount}% Off from 8 PM to 9 PM!` : "No Active Offer! Offer is available at 8PM to 9PM"}</h4>
+      <h4 className="text-danger text-center">{offerActive ? `Limited Time Offer: ${discount}% Off from 8 PM to 10 PM!` : "No Active Offer! Offer is available at 8PM to 10PM"}</h4>
 
       <div className="row justify-content-center">
         {filterednonVeg.map((item, index) => (
