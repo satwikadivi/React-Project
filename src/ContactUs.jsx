@@ -88,7 +88,7 @@ function ContactUs() {
             <strong>Email:</strong> support@onlineGrocery.com
           </p>
           <p>
-            <strong>Phone:</strong> 9533271545
+            <strong>Phone:</strong> 9533271546
           </p>
           <p className="text-muted">We respond within 24 hours!</p>
           <p><FontAwesomeIcon icon={faFacebook}/>&nbsp;

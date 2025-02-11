@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { Link } from "react-router-dom";
 
 
 function Home() {
@@ -170,7 +171,7 @@ const handlepage = (page) => {
             <div className="card-body text-center">
               <h5 className="card-title">Vegetables</h5>
               <p className="card-text">Fresh and organic vegetables at great prices.</p>
-              <a href="/veg" className="btn btn-success w-100">Shop Now</a>
+              <Link to={"/veg"} className="btn btn-success w-100">Shop Now</Link>
             </div>
           </div>
         </div>
@@ -181,7 +182,7 @@ const handlepage = (page) => {
             <div className="card-body text-center">
               <h5 className="card-title">Non-Veg Items</h5>
               <p className="card-text">Premium quality chicken, fish, and meat.</p>
-              <a href="/nonveg" className="btn btn-danger w-100">Shop Now</a>
+              <Link to={"/nonveg"} className="btn btn-danger w-100">Shop</Link>
             </div>
           </div>
         </div>
@@ -192,7 +193,7 @@ const handlepage = (page) => {
             <div className="card-body text-center">
               <h5 className="card-title">Dairy Products</h5>
               <p className="card-text">Milk, butter, paneer, and other dairy items.</p>
-              <a href="/milk" className="btn btn-primary w-100">Shop Now</a>
+              <Link to={"/milk"} className="btn btn-primary w-100">Shop Now</Link>
             </div>
           </div>
         </div>
@@ -202,7 +203,7 @@ const handlepage = (page) => {
             <div className="card-body text-center">
               <h5 className="card-title">Fruits</h5>
               <p className="card-text">Fresh and seasonal fruits, full of nutrition.</p>
-              <a href="/fruits" className="btn btn-warning w-100">Shop Now</a>
+              <Link to={"/fruits"} className="btn btn-warning w-100">Shop Now</Link>
             </div>
           </div>
         </div>
