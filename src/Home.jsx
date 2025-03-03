@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addTocart } from "./Store";
 
 
 function Home() {
-  
+  let dispatch = useDispatch();
   const allitems=[{image:"potato.jpg",name:"Potato",price:100},
     {image:"tomato.jpg",name:"Tomato",price:200},
     {image:"onion.jpg",name:"Onion",price:150},
@@ -67,18 +69,18 @@ function Home() {
       };
 
       // Pagination Logic
-let perpage = 3;
-let totalpages = Math.ceil(allitems.length / perpage);
-let [pagenumber, setpagenumber] = useState(1);
+      let perpage = 3;
+      let totalpages = Math.ceil(allitems.length / perpage);
+      let [pagenumber, setpagenumber] = useState(1);
 
-let pageenditemindex = perpage * pagenumber;
-let pagestartitemindex = pageenditemindex - perpage;
-let currentitems = allitems.slice(pagestartitemindex, pageenditemindex);
+      let pageenditemindex = perpage * pagenumber;
+      let pagestartitemindex = pageenditemindex - perpage;
+      let currentitems = allitems.slice(pagestartitemindex, pageenditemindex);
 
-const handlepage = (page) => {
-  setpagenumber(page);
-};
-        
+      const handlepage = (page) => {
+        setpagenumber(page);
+      };
+              
   return (
     <div className="container mt-4">
       <h1 className="text-primary text-center mb-4">Welcome to Online Grocery</h1>
@@ -93,11 +95,11 @@ const handlepage = (page) => {
               className="form-control"
               placeholder="Search..."
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <button className="btn btn-success" onClick={handleSearch}>
-              Search
-            </button>
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                  handleSearch(); // Automatically trigger search on input change
+                }}
+              />
           </div>
         </div>
       </div>
@@ -108,7 +110,7 @@ const handlepage = (page) => {
             <ul className="list-group">
               {filteredItems.map((item, index) => (
                 <li key={index} className="list-group-item">
-                   {item.name} - ${item.price}
+                   {item.allitems} {item.name} - ${item.price} 
                 </li>
               ))}
             </ul>
@@ -178,7 +180,7 @@ const handlepage = (page) => {
 
         <div className="col-md-3 mb-6 p-2">
           <div className="card shadow-sm">
-            <img src="nonveg.jpg" className="card-img-top" alt="Non-Veg" />
+            <img src="nonveg1.jpg" className="card-img-top" alt="Non-Veg" height={180}/>
             <div className="card-body text-center">
               <h5 className="card-title">Non-Veg Items</h5>
               <p className="card-text">Premium quality chicken, fish, and meat.</p>
@@ -226,6 +228,7 @@ const handlepage = (page) => {
             <div className="card-body text-center">
               <h5 className="card-title">{item.name}</h5>
               <p className="card-text text-muted fw-bold">₹{item.price}</p>
+              <button onClick={() => dispatch(addTocart(item))} className="btn btn-success w-100">Add to Cart</button>
             </div>
           </div>
         </div>

@@ -24,6 +24,8 @@ function Orders() {
                   <ul className="list-group list-group-flush">
                     {purchase.items.map((item, itemIndex) => (
                       <li key={itemIndex} className="list-group-item d-flex justify-content-between">
+                        <img src={item.image} width={50} height={40}></img>
+                        <br></br>
                         <span className="fw-bold">{item.name}:</span>
                         <span className="text-end">₹{item.price}(Qty:{item.quantity})</span>
                       </li>

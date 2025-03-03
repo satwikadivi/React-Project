@@ -35,7 +35,7 @@ function NonVegItems() {
   return (
     <div className="container-fluid mt-2 py-4">
       <h1 className="text-danger text-center mb-4">
-        <img src="nonveg.jpg" height={100} width={100} className="me-2 rounded-circle" alt="NonVeg" />
+        <img src="nonveg1.jpg" height={100} width={100} className="me-2 rounded-circle" alt="NonVeg" />
         Non-Veg Items</h1>
         <h2 className="text-muted">"Meat your cravings with every bite!"</h2>
 

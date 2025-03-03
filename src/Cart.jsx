@@ -59,6 +59,7 @@ function Cart() {
     dispatch(completepurchase(purchaseDetailsObject));
     dispatch(clearcart());
   };
+  
 
   return (
     <div className="container mt-4 ">
